@@ -1,6 +1,6 @@
 {
   "name": "one-neuron",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Visualization of the distribution of weights for one neuron with the possibility of manual training.",
   "main": "index.html",
   "repository": {
