@@ -112,7 +112,7 @@ class Scene {
           let res = this.context.neurons[activeNeuron]
           .analiz({functType: 0});
 
-          console.log('👓', res);
+          console.log('👓', {...res, neuron: this.context.neurons[activeNeuron]});
           if(res.status){
             clss({element: this.statusElement, add: 'true'})
             clss({element: this.statusElement, remove: 'false'})

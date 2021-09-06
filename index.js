@@ -1,9 +1,10 @@
 "use strict";
 (_ => {
   domReady(async _ => {
+    const projectPath = '/e4';
     await script([
-      'neuro.js',
-      'scene.js'
+      `${projectPath}/neuro.js`,
+      `${projectPath}/scene.js`
     ]);
 
     let data = [];
