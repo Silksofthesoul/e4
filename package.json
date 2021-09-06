@@ -1,0 +1,21 @@
+{
+  "name": "one-neuron",
+  "version": "0.0.0",
+  "description": "Visualization of the distribution of weights for one neuron with the possibility of manual training.",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Silksofthesoul/e4.git"
+  },
+  "keywords": [
+    "neuron",
+    "JavaScript",
+    "neural network"
+  ],
+  "author": "Labuzov Evgeny <silksofthesoul@yandex.ru>",
+  "license": "UNLICENSE",
+  "bugs": {
+    "url": "https://github.com/Silksofthesoul/e4/issues"
+  },
+  "homepage": "https://github.com/Silksofthesoul/e4#readme"
+}
