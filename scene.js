@@ -293,7 +293,8 @@ class Scene {
   }
 
   createMatrix () {
-    const draw = index => {
+    const draw = (index, element) => {
+      element.blur();
       if(this.matrix[index] === 0) this.matrix[index] = 1;
       else this.matrix[index] = 0;
     };
@@ -304,17 +305,30 @@ class Scene {
         // id: `id${index}`,
         events: [
           {
+            type: 'drag',
+            handler: ({ element, event }) => event.preventDefault()
+          },
+          {
+            type: 'mousemove',
+            handler: ({ element, event }) => element.blur()
+          },
+          {
             type: 'mouseover',
             handler: ({ element, event }) => {
               const { buttons } = event;
-              if(buttons === 1) draw(index);
+              if(buttons === 1) draw(index, element);
             }
+          },
+          {
+            type: 'mousedown',
+            handler: ({ element, event }) => event.preventDefault()
           }, {
             type: 'click',
-            handler: ({ element, event }) => draw(index)
+            handler: ({ element, event }) => draw(index, element)
           }
         ]
       });
+      setAttr(elDraw, 'draggable', 'false');
       let elInspect = element('div', { class: 'matrixInspect' });
       // addAttr(el, 'data-index', index);
       this.matrixElements.push(elDraw);
@@ -392,6 +406,7 @@ class Scene {
         'grid-template-columns': `repeat(${this.width}, 1fr)`,
         'grid-template-rows': `repeat(${this.width}, 1fr)`
       });
+      setAttr(this.element, 'draggable', 'false');
       insert(this.element);
     }
     if(!this.inspect) {
